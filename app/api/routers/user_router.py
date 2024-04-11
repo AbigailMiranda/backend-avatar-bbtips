@@ -13,4 +13,15 @@ async def auth(req: Request):
 @user_router.post('/validate_access_token')
 async def valdiate(req: Request):
     data = await req.json()
+    print(data)
     return UserController().validate_access_token(data)
+
+@user_router.post('/send-form')
+async def send_form(req: Request):
+    data = await req.json()
+    return UserController().get_data_user_form(data)
+
+@user_router.post('/validate_id')
+async def valdiate_id(req: Request):
+    data = await req.json()
+    return UserController().validate_id_user(data)
