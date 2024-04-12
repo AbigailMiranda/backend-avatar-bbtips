@@ -25,3 +25,8 @@ async def send_form(req: Request):
 async def valdiate_id(req: Request):
     data = await req.json()
     return UserController().validate_id_user(data)
+
+@user_router.post('/accept-privacity')
+async def accept_privacity(req: Request):
+    data= await req.json()
+    return UserController().user_accept_privacity(data)

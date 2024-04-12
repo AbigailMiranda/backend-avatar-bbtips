@@ -77,7 +77,7 @@ class UserController:
             if (accept):
                 # todo: crea el usuario en la bd y le asigna el id
                 user_id = uuid.uuid4()
-                query = f"INSERT INTO ususarios_papa (IDUser) VALUES ('{user_id}')"
+                query = f"INSERT INTO ususarios_papa (IDUser) VALUES ('{user_id}');"
                 self.connection.execute_query(query)
                 return {'error': False, 'data': user_id}
             else:
