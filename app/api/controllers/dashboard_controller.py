@@ -19,10 +19,10 @@ class DashboardController:
 
     def user_parents_info(self, skip: int = 0, limit: int = 10):
         try:
-            query = f'SELECT * FROM usuarios_papas LIMIT {limit} OFFSET {skip};'
+            query = f'SELECT * FROM usuarios_papas WHERE RealizoEncuesta = 1 LIMIT {limit} OFFSET {skip};'
             res = self.connection.fetch_query(query)
 
-            query = 'SELECT COUNT(*) AS count FROM usuarios_papas;'
+            query = 'SELECT COUNT(*) AS count FROM usuarios_papas WHERE RealizoEncuesta = 1;'
             count = self.connection.fetch_query(query)[0]['count']
 
             if len(res) == 0:
