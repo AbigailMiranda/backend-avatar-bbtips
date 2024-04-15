@@ -69,9 +69,9 @@ class ConnectionMySQL:
                     results.append(result_dict)
                 cursor.close()
                 return results
-            
+
         except Exception as e:
             print(f'error in fetch cuery: {e}')
-        
+
         finally:
             self.desconnect()
