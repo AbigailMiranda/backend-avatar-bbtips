@@ -50,3 +50,16 @@ class DashboardController:
         except Exception as e:
             print(str(e))
             return {'error': True, 'data': str(e)}
+
+    def genere_data(self):
+        try:
+            query = f"""
+            SELECT genero, COUNT(*) as cantidad
+            FROM usuarios_papas
+            WHERE Genero IS NOT NULL
+            GROUP BY Genero;
+            """
+            res = self.connection.fetch_query(query)
+            print(res)
+        except Exception as e:
+            print(str(e))

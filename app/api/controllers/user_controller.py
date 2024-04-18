@@ -74,7 +74,7 @@ class UserController:
     def user_accept_privacity(self, data: any):
         try:
             accept = data.get('accept')
-            if (accept):
+            if (accept == '1'):
                 # todo: crea el usuario en la bd y le asigna el id
                 user_id = uuid.uuid4()
                 user_id = str(user_id)
