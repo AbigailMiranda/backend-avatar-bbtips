@@ -28,7 +28,7 @@ class AvatarController:
             id_user = data.get('id-user')
             feedback = data.get('feedback')
 
-            query = f"INSERT INTO comentarios_usuarios (IDUser, Comentario, Tipo) VALUES ('{id_user}',{stats}, '{feedback}');"
+            query = f"INSERT INTO comentarios_usuarios (IDUser, Comentario, Tipo) VALUES ('{id_user}','{feedback}', {stats});"
             self.connection.execute_query(query)
             return 'Se inserto correctamente'
         except Exception as e:
