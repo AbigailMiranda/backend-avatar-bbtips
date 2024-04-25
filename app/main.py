@@ -22,3 +22,7 @@ app.include_router(dashboard_router)
 @app.get('/test')
 def test():
     return {'data': 'data from backend'}
+
+@app.get('/')
+def root():
+    return 'hello word'

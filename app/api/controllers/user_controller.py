@@ -68,7 +68,7 @@ class UserController:
             else:
                 return {'error': True, 'data': 'Correo o contraseña incorrectos'}
         except Exception as e:
-            print(f'error in autentication user: {e}')
+            print(f'error in authentication user: {e}')
             return 'Error en la autentificación'
 
     def user_accept_privacity(self, data: any):
@@ -85,7 +85,7 @@ class UserController:
             else:
                 return {'error': False, 'data': 'user not accepted'}
         except Exception as e:
-            print(f'error in user accept privacity {str(e)}')
+            print(f'error in user accept privacy {str(e)}')
             return {'error': True, 'data': f'{str(e)}'}
 
     def get_data_user_form(self, data: any):

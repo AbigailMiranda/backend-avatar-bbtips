@@ -9,3 +9,8 @@ avatar_router = APIRouter(
 async def question(req: Request):
     question = await req.json()
     return AvatarController().get_response_for_question(question)
+
+@avatar_router.post('/feedback')
+async def save_feedback(req: Request):
+    data = await req.json()
+    return AvatarController().save_feedback(data)

@@ -21,6 +21,18 @@ class AvatarController:
         except Exception as e:
             print(str(e))
             return {'error': True, 'data': str(e)}
+        
+    def save_feedback(self, data: any):
+        try:
+            stats = data.get('stats')
+            id_user = data.get('id-user')
+            feedback = data.get('feedback')
+
+            query = f"INSERT INTO comentarios_usuarios (IDUser, Comentario, Tipo) VALUES ('{id_user}',{stats}, '{feedback}');"
+            self.connection.execute_query(query)
+            return 'Se inserto correctamente'
+        except Exception as e:
+            print(f'error in save_feedback: {str(e)}')
 
 
 
