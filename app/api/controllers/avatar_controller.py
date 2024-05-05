@@ -13,6 +13,6 @@ class AvatarController:
 
         #ejemplo de uso
         # pregunta del usuario
-        additional_instructions = "Sé amable y comprensiva con el usuario"
+        additional_instructions = "Responde como una mamá"
         response = self.assistant.ask_question_and_get_response(question, additional_instructions)
         return response
